@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة الشكاوى والاقتراحات</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+<body>
+    <!-- Heading And Logo -->
+    <div class="top">
+        <a href="https://alnaiem.sa/" style="display: contents;">
+            <img src="indx_files/IMG_0163.PNG" alt="AL NAIEM R">
+        </a>
+        <header>
+            <h1>ساعدنا في تحسين خدماتنا</h1>
+        </header>
+    </div>
+    <section class="main-content">
+        <form method="post" name="emailContact">
+            <div class="form-group">
+                <label><em>*</em> الأسم</label>
+                <input type="text" name="UserName" placeholder="أدخل اسمك الكامل" required>
+            </div>
+            <div class="form-group">
+                <label><em>*</em> رقم الجوال</label>
+                <input type="number" name="Phon" rows="10" placeholder="أدخل رقم الجوال" required>
+            </div>
+            <div class="form-group">
+                <label name="Branch">الفرع</label>
+                <!-- <input type="text" "branch" name="branch" placeholder="فرع النزهة - فرع الحمداينة"> -->
+                <select name="cars">
+                    <option value="alnzha">فرع النزهة</option>
+                    <option value="hmda">فرع الحمدانية</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">التاريخ</label>
+                <input type="date" name="Date" style="cursor: pointer;">
+            </div>
+            <div class="form-group">
+                <label for="subject">موضوع الشكوى او اقتراحك</label>
+                <!-- <input type="text" "subject" name="subject" placeholder="أدخل موضوع شكواك أو اقتراحك"> -->
+                <select name="cars">
+                    <option value="reception">الاستقبال</option>
+                    <option value="place">نظافة المكان</option>
+                    <option value="food">جودة الطعام</option>
+                    <option value="serves">جودة الخدمة</option>
+                </select>
+            </div>
+            <div class="mess">
+                <label for="mes">الرسالة</label>
+                <textarea id="message" name="message" rows="5" placeholder="أكتب شكواك أو اقتراحك بالتفصيل"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" name="send">إرسال</button>
+            </div>
+        </form>
+    </section>
+    <br>
+    <footer>
+        جميع الحقوق محفوظة لمطابخ ومطاعم النعيم للمناسبات &copy; 2024
+    </footer>
+</body>
+</html>
