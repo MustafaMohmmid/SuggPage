@@ -15,64 +15,67 @@
 <?php
 if(!empty($_POST["send"])) {
     $UserName = $_POST["$UserName"];
-    $Phon = $_POST["$Phon"];
+    $UserPhon = $_POST["$UserPhon"];
     $Branch = $_POST["$Branch"];
     $Date = $_POST["$Date"];
-    $cars = $_POST["$cars"];
+    $subj = $_POST["$subj"];
     $message = $_POST["$message"];
     $toEmail = $_POST["abm31804@gmail.com"];
 
     $mailHeaders = "الاسم:" . $UserName .
-    "\r\n الرقم:" $Phon .
+    "\r\n الرقم:" $UserPhon .
     "\r\n الفرع:" $Branch . 
     "\r\n التاريخ:" $Date .
     "\r\n الشكوى او الافتراح عن:" $cars .
     "\r\n تفاصيل الشكوى او الاقتراح:" $message . "\r\n";
-    // if(mail($toEmail, $UserName, $mailHeaders)) {
-        // $message = "تم ارسال رسالك بنجاح.";
-    // }
+   
+    if(mail($toEmail, $UserName, $mailHeaders)) {
+        $message = "تم ارسال رسالك بنجاح.";
+    }
 }
 ?>
-<section class="main-content">
+ <div class="section">
         <form method="post" name="emailContact">
-            <div class="form-group">
-                <label><em>*</em> الأسم</label>
+            <div class="from-group">
+                <label for=""><em>*</em> الأسم</label>
                 <input type="text" name="UserName" placeholder="أدخل اسمك الكامل" required>
             </div>
-            <div class="form-group">
-                <label><em>*</em> رقم الجوال</label>
-                <input type="number" name="Phon" placeholder="أدخل رقم الجوال" required>
+            <div class="from-group">
+                <label for=""><em>*</em> الرقم</label>
+                <input type="tel" name="UserPhon" placeholder=" رقمك المسجل في الفاتورة" required>
             </div>
-            <div class="form-group">
-                <label name="Branch">الفرع</label>
-                <!-- <input type="text" "branch" name="branch" placeholder="فرع النزهة - فرع الحمداينة"> -->
-                <select name="cars">
+            <div class="from-group">
+                <label for="">الفرع</label>
+                <select name="Branch">
                     <option value="alnzha">فرع النزهة</option>
                     <option value="hmda">فرع الحمدانية</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="date">التاريخ</label>
+                </select>            </div>
+            <div class="from-group">
+                <label for="">التاريخ</label>
                 <input type="date" name="Date" style="cursor: pointer;">
             </div>
-            <div class="form-group">
-                <label for="subject">موضوع الشكوى او اقتراحك</label>
-                <!-- <input type="text" "subject" name="subject" placeholder="أدخل موضوع شكواك أو اقتراحك"> -->
-                <select name="cars">
+            <div class="from-group">
+                <label for="">موضوع الشكوى او اقتراحك</label>
+                <select name="subj">
                     <option value="reception">الاستقبال</option>
                     <option value="place">نظافة المكان</option>
                     <option value="food">جودة الطعام</option>
                     <option value="serves">جودة الخدمة</option>
                 </select>
             </div>
-            <div class="mess">
-                <label for="mes">الرسالة</label>
+            <div class="from-group">
+                <label for="">الرسالة</label>
                 <textarea id="message" name="message" rows="5" placeholder="أكتب شكواك أو اقتراحك بالتفصيل"></textarea>
             </div>
-            <div class="form-group">
-                <button type="submit" name="send">إرسال</button>
+            <div class="from-group">
+                <input type="submit" name="send" value="إرسال"style=" background: #881e06; color: white; font-size: 14 px; cursor: pointer;">
+                <?php if (! empty($message)) {?>
+                <div class="dan">
+                    <strong><?php echo $message; ?>	</strong>
+                </div>
+                <?php } ?>
             </div>
         </form>
-    </section>
+    </div>
 </body>
 </html>
